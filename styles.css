@@ -1,0 +1,52 @@
+.hof-popover {
+  position: fixed;
+  z-index: 1000;
+  width: 192px;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  box-shadow: 0 5px 20px rgba(0,0,0,.22);
+  font-size: 12px;
+}
+.hof-top { display: flex; align-items: center; justify-content: space-between; height: 25px; padding: 0 3px; margin-bottom: 4px; font-weight: 600; }
+.hof-popover .hof-close { width: 22px; height: 22px; padding: 3px; border: none; box-shadow: none; background: transparent; color: var(--text-faint); }
+.hof-close svg { width: 13px; height: 13px; }
+.hof-grid { display: grid; grid-template-columns: 38px 1fr 1fr; align-items: center; gap: 4px; }
+.hof-column { text-align: center; font-size: 10px; color: var(--text-muted); padding: 1px 0 4px; }
+.hof-row-label { padding-left: 3px; color: var(--hof-color); font-size: 11px; font-weight: 600; }
+.hof-row-label.is-empty { opacity: .35; }
+.hof-popover .hof-action { height: 27px; min-width: 0; padding: 4px; box-shadow: none; border: 1px solid transparent; border-radius: 5px; background: var(--background-secondary); color: var(--hof-color); }
+.hof-action svg { width: 15px; height: 15px; }
+.hof-popover .hof-fold:not(:disabled) { background: var(--hof-color); border-color: var(--hof-color); color: var(--background-primary); }
+.hof-popover .hof-unfold:not(:disabled) {
+  background: color-mix(in srgb, var(--hof-color) 15%, var(--background-primary));
+  border-color: color-mix(in srgb, var(--hof-color) 48%, transparent);
+}
+.hof-popover .hof-fold:hover:not(:disabled) { background: color-mix(in srgb, var(--hof-color) 85%, var(--text-normal)); }
+.hof-popover .hof-unfold:hover:not(:disabled) { background: color-mix(in srgb, var(--hof-color) 26%, var(--background-primary)); border-color: var(--hof-color); }
+.hof-popover .hof-action.is-used:not(:disabled) { box-shadow: inset 0 0 0 1px currentColor; }
+.hof-popover .hof-action:disabled { opacity: .25; }
+.hof-popover button:focus-visible { outline: 2px solid var(--hof-color, var(--interactive-accent)); outline-offset: 1px; }
+.hof-status-button { display: flex; align-items: center; justify-content: center; padding: 2px 5px !important; width: 26px; height: 22px; box-shadow: none !important; background: transparent !important; color: var(--text-muted); }
+.hof-status-button svg { width: 15px; height: 15px; }
+
+/* Keep the All row neutral; H1-H6 retain their heading colors. */
+.hof-grid > :nth-child(4),
+.hof-grid > :nth-child(5),
+.hof-grid > :nth-child(6) {
+  --hof-color: var(--text-muted) !important;
+}
+.hof-popover .hof-action:nth-child(5):not(:disabled),
+.hof-popover .hof-action:nth-child(6):not(:disabled) {
+  background: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+  color: var(--text-muted);
+}
+.hof-popover .hof-action:nth-child(5):hover:not(:disabled),
+.hof-popover .hof-action:nth-child(6):hover:not(:disabled) {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}

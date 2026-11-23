@@ -1,0 +1,10 @@
+node_modules/
+.env
+.env.*
+data.json
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.test*/
+/테스트.md
